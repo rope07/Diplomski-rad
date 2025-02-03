@@ -92,7 +92,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: appState.bodyColor,
         title: Text(
-          'O aplikaciji',
+          'Naslovnica',
           style: TextStyle(color: appState.textColor),
         ),
         centerTitle: true,
