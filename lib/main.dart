@@ -40,21 +40,42 @@ class _MyAppState extends State<MyApp> {
       ),
       home: Scaffold(
         body: _pages[_selectedIndex],
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _selectedIndex,
-          onTap: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          },
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Naslovnica'),
-            BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Izbornik'),
-            BottomNavigationBarItem(icon: Icon(Icons.map), label: 'Karta'),
-          ],
-          backgroundColor: appState.bodyColor,
-          selectedItemColor: appState.textColor,
-          unselectedItemColor: appState.textColor.withOpacity(0.6),
+        bottomNavigationBar: Semantics(
+          label: "Navigacijska traga za odabir stranice",
+          child: BottomNavigationBar(
+            currentIndex: _selectedIndex,
+            onTap: (index) {
+              setState(() {
+                _selectedIndex = index;
+              });
+            },
+            items: [
+              BottomNavigationBarItem(
+                icon: Semantics(
+                  label: "Naslovnica",
+                  hint: "Prebaci na nslovnicu",
+                  child: const Icon(Icons.home)),
+                label: 'Naslovnica'
+              ),
+              BottomNavigationBarItem(
+                icon: Semantics(
+                  label: 'Izbornik',
+                  hint: "Prebaci na stranicu izbornika",
+                  child: const Icon(Icons.menu)),
+                label: 'Izbornik'
+              ),
+              BottomNavigationBarItem(
+                icon: Semantics(
+                  label: "Karta",
+                  hint: "Prebaci na stranicu karte",
+                  child: const Icon(Icons.map)),
+                label: 'Karta'
+              ),
+            ],
+            backgroundColor: appState.bodyColor,
+            selectedItemColor: appState.textColor,
+            unselectedItemColor: appState.textColor.withOpacity(0.6),
+          ),
         ),
       ),
     );
@@ -238,7 +259,7 @@ class HomePage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Text(
-            'Prototip pristupačne aplikacije za turizam. Razvijena je u skopu diplomskog rada "Model procesa razvoja programskih rješenja za pristupačni turizam" Pera Paskovića pod mentorstvom prof. dr. sc. Željke Car, ak. godina 2024/2025, Sveučilište u Zagrebu Fakultet elektrotehnike i računarstva',
+            'Prototip pristupačne aplikacije za turizam. Razvijena je u sklopu diplomskog rada "Model procesa razvoja programskih rješenja za pristupačni turizam" Pera Paskovića pod mentorstvom prof. dr. sc. Željke Car, ak. godina 2024/2025, Sveučilište u Zagrebu Fakultet elektrotehnike i računarstva',
             style: TextStyle(fontSize: appState.fontSize, fontFamily: appState.fontFamily, color: appState.textColor),
             textAlign: TextAlign.center
           ),
