@@ -172,30 +172,45 @@ class Menu extends StatelessWidget {
             ),
         ],
       ),
-      body: ListView(
-        children: [
-          ListTile(
-            leading: Icon(Icons.church, size: appState.iconSize),
-            title: Text('Crkva sv. Vlaha', style: TextStyle(fontSize: appState.fontSize, color: appState.textColor)),
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => SvetiVlaho()));
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.church, size: appState.iconSize),
-            title: Text('Katedrala Uznesenja Blažene Djevice Marije', style: TextStyle(fontSize: appState.fontSize, color: appState.textColor)),
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Katedrala()));
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.church, size: appState.iconSize),
-            title: Text('Samostan Male braće', style: TextStyle(fontSize: appState.fontSize, color: appState.textColor)),
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => MalaBraca()));
-            },
-          ),
-        ],
+      body: Semantics(
+        label: "Izbornik s turističkim lokacijama",
+        child: ListView(
+          children: [
+            Semantics(
+              label: "Crkva svetog Vlaha",
+              hint: "Pritisnite za pregledavanje informacija o Crkvi svetog Vlaha",
+              child: ListTile(
+                leading: Icon(Icons.church, size: appState.iconSize),
+                title: Text('Crkva sv. Vlaha', style: TextStyle(fontSize: appState.fontSize, color: appState.textColor)),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SvetiVlaho()));
+                },
+              ),
+            ),
+            Semantics(
+              label: "Katedrala Uznesenja Blažene Djevice Marije",
+              hint: "Pritisnite za pregledavanje informacija o Katedrali Uznesenja Blažene Djevice Marije",
+              child: ListTile(
+                leading: Icon(Icons.church, size: appState.iconSize),
+                title: Text('Katedrala Uznesenja Blažene Djevice Marije', style: TextStyle(fontSize: appState.fontSize, color: appState.textColor)),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Katedrala()));
+                },
+              ),
+            ),
+            Semantics(
+              label: "Samostan Male Braće",
+              hint: "Pritisnite za pregledavanje informacija o Samostanu Male Braće",
+              child: ListTile(
+                leading: Icon(Icons.church, size: appState.iconSize),
+                title: Text('Samostan Male braće', style: TextStyle(fontSize: appState.fontSize, color: appState.textColor)),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MalaBraca()));
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
