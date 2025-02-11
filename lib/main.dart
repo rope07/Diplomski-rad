@@ -259,7 +259,8 @@ class HomePage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Text(
-            'Prototip pristupačne aplikacije za turizam. Razvijena je u sklopu diplomskog rada "Model procesa razvoja programskih rješenja za pristupačni turizam" Pera Paskovića pod mentorstvom prof. dr. sc. Željke Car, ak. godina 2024/2025, Sveučilište u Zagrebu Fakultet elektrotehnike i računarstva',
+            'Prototip pristupačne aplikacije za turizam. Razvijena je u sklopu diplomskog rada "Model procesa razvoja programskih rješenja za pristupačni turizam" Pera Paskovića pod mentorstvom prof. dr. sc. Željke Car, ak. godina 2024/2025, Sveučilište u Zagrebu Fakultet elektrotehnike i računarstva\n\n'
+            'Zvučne zapise u aplikaciji snimila Lcuija Stahor, profesorica hrvatskog jezika i književnosti. Video zapise snimila Katarina Jurilj, članica Saveza gluhih i nagluhih Grada Zagreba',
             style: TextStyle(fontSize: appState.fontSize, fontFamily: appState.fontFamily, color: appState.textColor),
             textAlign: TextAlign.center
           ),
